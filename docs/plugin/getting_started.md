@@ -20,8 +20,8 @@ repositories {
 ### Declaring Dependencies
 Mod versions can be found on Modrinth: [WTHIT](https://modrinth.com/mod/wthit/versions), [Bad Packets](https://modrinth.com/mod/badpackets/versions)
 
-=== "Fabric"
-    ```gradle
+## Fabric  
+```gradle
     dependencies {
       // compile against the API
       modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${wthitVersion}"
@@ -30,9 +30,9 @@ Mod versions can be found on Modrinth: [WTHIT](https://modrinth.com/mod/wthit/ve
       modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
     }
-    ```
-=== "Forge"
-    ```gradle 
+```
+## Forge
+```gradle 
     buildscript {
       dependencies {
         classpath "org.spongepowered:mixingradle:0.7.+"
@@ -49,9 +49,9 @@ Mod versions can be found on Modrinth: [WTHIT](https://modrinth.com/mod/wthit/ve
       runtimeOnly fg.deobf("mcp.mobius.waila:wthit:forge-${wthitVersion}")
       runtimeOnly fg.deobf("lol.bai:badpackets:forge-${badpacketsVersion}")
     }
-    ```
-=== "NeoForge"
-    ```gradle
+```
+## NeoForge
+```gradle
     dependencies {
       // compile against the API
       compileOnly "mcp.mobius.waila:wthit-api:neo-${wthitVersion}"
@@ -60,9 +60,9 @@ Mod versions can be found on Modrinth: [WTHIT](https://modrinth.com/mod/wthit/ve
       runtimeOnly "mcp.mobius.waila:wthit:neo-${wthitVersion}"
       runtimeOnly "lol.bai:badpackets:neo-${badpacketsVersion}"
     }
-    ```
-=== "Quilt"
-    ```gradle
+```
+## Quilt
+```gradle
     dependencies {
       // compile against the API
       modCompileOnly "mcp.mobius.waila:wthit-api:quilt-${wthitVersion}"
@@ -71,44 +71,51 @@ Mod versions can be found on Modrinth: [WTHIT](https://modrinth.com/mod/wthit/ve
       modRuntimeOnly "mcp.mobius.waila:wthit:quilt-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
     }
-    ```
-=== "Architectury"
-    ```gradle title="Common Project"
+```
+## Architectury
+### Common Project
+```gradle 
     dependencies {
       modCompileOnly "mcp.mobius.waila:wthit-api:fabric-${wthitVersion}"
     }
-    ```
-    ```gradle title="Fabric Project"
+```
+### Fabric Project
+```gradle
     dependencies {
       modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
     }
-    ```
-    ```gradle title="Forge Project"
+```
+### Forge Project
+```gradle
     dependencies {
       modRuntimeOnly "mcp.mobius.waila:wthit:forge-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:forge-${badpacketsVersion}"
     }
-    ```
-    ```gradle title="Quilt Project"
+```
+### Quilt Project
+```gradle 
     dependencies {
       modRuntimeOnly "mcp.mobius.waila:wthit:quilt-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
     }
-    ```
-=== "VanillaGradle Multiplatform"
-    ```gradle title="Common Project"
+```
+## VanillaGradle Multiplatform
+### Common Project
+```gradle
     dependencies {
       compileOnly "mcp.mobius.waila:wthit-api:mojmap-${wthitVersion}"
     }
-    ```
-    ```gradle title="Fabric Project"
+```
+### Fabric Project
+```gradle 
     dependencies {
       modRuntimeOnly "mcp.mobius.waila:wthit:fabric-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
     }
-    ```
-    ```gradle title="Forge Project"
+```
+### Forge Project
+```gradle
     buildscript {
       dependencies {
         classpath "org.spongepowered:mixingradle:0.7.+"
@@ -121,19 +128,21 @@ Mod versions can be found on Modrinth: [WTHIT](https://modrinth.com/mod/wthit/ve
       runtimeOnly fg.deobf("mcp.mobius.waila:wthit:forge-${wthitVersion}")
       runtimeOnly fg.deobf("lol.bai:badpackets:forge-${badpacketsVersion}")
     }
-    ```
-    ```gradle title="NeoForge Project"
+```
+### NeoForge Project
+```gradle
     dependencies {
       runtimeOnly "mcp.mobius.waila:wthit:neo-${wthitVersion}"
       runtimeOnly "lol.bai:badpackets:neo-${badpacketsVersion}"
     }
-    ```
-    ```gradle title="Quilt Project"
+```
+### Quilt Project
+```gradle
     dependencies {
       modRuntimeOnly "mcp.mobius.waila:wthit:quilt-${wthitVersion}"
       modRuntimeOnly "lol.bai:badpackets:fabric-${badpacketsVersion}"
     }
-    ```
+```
 
 ???+ note "Why compiling against the API jar?"
      When you compile against the full jar and use non API classes, your mod could break any time WTHIT updates.
